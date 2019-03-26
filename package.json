@@ -2,25 +2,34 @@
   "name": "jsontable",
   "version": "0.1.0",
   "private": true,
-  "dependencies": {
+  "main": "public/electron.js",
+  "devDependencies": {
+    "@craco/craco": "^3.6.0",
     "@types/jest": "24.0.11",
     "@types/node": "11.11.7",
     "@types/react": "16.8.8",
     "@types/react-dom": "16.8.3",
+    "cross-env": "^5.2.0",
+    "electron": "^4.1.1",
+    "electron-builder": "^20.39.0",
     "react": "^16.8.5",
     "react-dom": "^16.8.5",
     "react-scripts": "2.1.8",
     "typescript": "3.3.4000"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "craco start",
+    "build": "craco build",
+    "test": "craco test",
+    "eject": "react-scripts eject",
+    "electron": "cross-env ELECTRON_LOAD_URL=http://localhost:3000 electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
   },
   "eslintConfig": {
     "extends": "react-app"
   },
+  "homepage": "./",
   "browserslist": [
     ">0.2%",
     "not dead",
